@@ -11,6 +11,14 @@ class StackReporterExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+        
+        // Set the API key as a parameter
+        if (isset($config['api_key'])) {
+            $container->setParameter('grayloon_stack_reporter.api_key', $config['api_key']);
+        }
+
         $loader = new YamlFileLoader(
             $container,
             new FileLocator(__DIR__ . '/../../Resources/config')
@@ -21,4 +29,10 @@ class StackReporterExtension extends Extension
             $loader->load('services.yaml');
         }
     }
+
+    public function getAlias(): string
+    {
+        return 'grayloon_stack_reporter';
+    }
+
 }

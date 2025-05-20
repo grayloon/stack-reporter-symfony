@@ -13,9 +13,9 @@ class Configuration implements ConfigurationInterface
 
         $treeBuilder->getRootNode()
             ->children()
-                // Add any configuration options for your bundle here
-                // For example:
-                // ->scalarNode('api_key')->defaultNull()->end()
+                ->scalarNode('api_key')
+                    ->defaultNull()
+                    ->info('API key for accessing stack reporter endpoints')
             ->end()
         ;
 

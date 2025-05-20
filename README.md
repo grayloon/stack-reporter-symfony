@@ -12,6 +12,13 @@ composer require grayloon/stack-reporter
 
 ## Configuration
 
+Add configuration to your `config/packages/grayloon_stack_reporter.yaml` file:
+
+```yaml
+grayloon_stack_reporter:
+    api_key: 'YO-KEY' # Your secure API key
+```
+
 ### For all Symfony versions (5.x, 6.x, 7.x):
 
 1. Register the bundle in `config/bundles.php`:
@@ -29,7 +36,7 @@ return [
 ```yaml
 # config/routes.yaml
 stack_reporter:
-    resource: '@StackReporterBundle/Controller/'
+    resource: '../vendor/grayloon/stack-reporter/src/Controller/'
     type: attribute
 ```
 
