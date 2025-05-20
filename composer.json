@@ -1,5 +1,5 @@
 {
-    "name": "grayloon/stack-reporter",
+    "name": "grayloon/stack-reporter-symfony",
     "description": "A stack reporting bundle for Symfony",
     "type": "symfony-bundle",
     "license": "MIT",
