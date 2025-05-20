@@ -7,7 +7,7 @@ A simple Symfony bundle that provides system information endpoints.
 Install the bundle with Composer:
 
 ```bash
-composer require grayloon/stack-reporter
+composer require grayloon/stack-reporter-symfony
 ```
 
 ## Configuration
@@ -36,7 +36,7 @@ return [
 ```yaml
 # config/routes.yaml
 stack_reporter:
-    resource: '../vendor/grayloon/stack-reporter/src/Controller/'
+    resource: '../vendor/grayloon/stack-reporter-symfony/src/Controller/'
     type: attribute
 ```
 
@@ -50,13 +50,12 @@ composer require sensio/framework-extra-bundle
 
 ## Usage
 
-Once installed and configured, visit the following endpoints:
+Once installed and configured, an endpoint is created to accept a post request with your site's key.
 
-- `/api/info` - Returns basic system information in JSON format including:
+- `/api/v1/stack-reporter`
   - Symfony version
   - PHP version
-  - Project name
-  - Current time
+  - Node version
 
 ## Example Response
 
@@ -64,8 +63,7 @@ Once installed and configured, visit the following endpoints:
 {
   "symfony_version": "6.4.0",
   "php_version": "8.2.12",
-  "project_name": "stack-reporter",
-  "current_time": "2025-05-20 13:45:22"
+  "node_version": "22.14.0"
 }
 ```
 
