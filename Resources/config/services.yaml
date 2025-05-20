@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    # Register controllers as services
+    Grayloon\StackReporter\Controller\:
+        resource: '../../src/Controller/'
+        tags: ['controller.service_arguments']
