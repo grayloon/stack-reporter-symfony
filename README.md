@@ -42,10 +42,17 @@ stack_reporter:
 
 ### Additional steps for Symfony 5.x (versions before 5.3)
 
-For Symfony versions before 5.3, you'll need to install SensioFrameworkExtraBundle to support PHP 8 attributes for routing:
+For Symfony versions before 5.3, we'll load the controller directly, bypassing PHP 8 attributes.
 
-```bash
-composer require sensio/framework-extra-bundle
+```yaml
+# config/routes/stack_reporter.yaml
+grayloon_stack_reporter_api_info:
+    path: /api/v1/stack-reporter
+    controller: Grayloon\StackReporter\Controller\ApiController::info
+
+# config/routes.yaml
+stack_reporter_routes:
+    resource: './routes/stack_reporter.yaml'
 ```
 
 ## Usage
